@@ -11,8 +11,8 @@ using namespace cmq;
 int main()
 {
     //从腾讯云官网查询的云API密钥信息
-    string secretId="AKIDU65RoYl9Q4okMfnrTE9FVhmmuWYnZJXl";
-    string secretKey="mWVemFhWOiQX0ZEErlizRDLXgOVyptH1";
+    string secretId="";
+    string secretKey="";
     string endpoint="http://cmq-queue-sh.api.qcloud.com";
 
     try
