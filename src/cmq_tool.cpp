@@ -92,15 +92,15 @@ namespace cmq
 		HMAC_CTX ctx;
 		HMAC_CTX_init(&ctx);
 
-		if(method  == "sha256")
-		{
-			HMAC_Init_ex(&ctx,key.c_str(),key.size(),EVP_sha256(),NULL);
-			len=32;
-		}
-		else
+		if(method  == "sha1")
 		{
 			HMAC_Init_ex(&ctx,key.c_str(),key.size(),EVP_sha1(),NULL);
 			len=20;
+		}
+		else
+		{
+			HMAC_Init_ex(&ctx,key.c_str(),key.size(),EVP_sha256(),NULL);
+			len=32;
 		}
 		HMAC_Update(&ctx, (unsigned char*)src.c_str(), src.size());
 		HMAC_Final(&ctx, result, &len);
