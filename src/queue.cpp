@@ -226,9 +226,9 @@ void Queue::batchReceiveMessage(int numOfMsg, int pollingWaitSeconds, vector<Mes
 		msg.receiptHandle = valMsg["receiptHandle"].asString();
 		msg.msgBody = valMsg["msgBody"].asString();
 		msg.enqueueTime = valMsg["enqueueTime"].asUInt64();
-		msg.nextVisibleTime = value["nextVisibleTime"].asUInt64();
-		msg.firstDequeueTime = value["firstDequeueTime"].asUInt64();
-		msg.dequeueCount = value["dequeueCount"].asInt();
+		msg.nextVisibleTime = valMsg["nextVisibleTime"].asUInt64();
+		msg.firstDequeueTime = valMsg["firstDequeueTime"].asUInt64();
+		msg.dequeueCount = valMsg["dequeueCount"].asInt();
 
 		msgList.push_back(msg);
 	}
