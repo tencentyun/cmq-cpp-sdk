@@ -278,7 +278,7 @@ void Queue::rewindQueue(const unsigned long backTrackingTime)
     map<string,string> param;
 	param["queueName"] = this->queueName;
 	param["startConsumeTime"] = backTrackingTime; 
-	string result = this->client.call("rewindQueue", param);
+	string result = this->client.call("RewindQueue", param);
 	Json::Reader reader;
 	Json::Value value;
 	if(!reader.parse(result, value))
