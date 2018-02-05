@@ -105,7 +105,6 @@ class Account
 		 * @param notifyStrategy      推送失败重试策略
 		 * @param notifyContentFormat 推送格式
 		**/
-		void createSubscribe(const string & topicName, const string & subscriptionName, const string & endpoint ,const  string  & protocol ,const vector<string> & bindingKey);
 		void createSubscribe(const string & topicName, const string & subscriptionName, const  string & endpoint,
 			const string & protocol, const vector<string> & bindingKey , const vector<string> & vFilterTag,
 			const string & notifyStrategy="BACKOFF_RETRY", const string & notifyContentFormat="JSON");

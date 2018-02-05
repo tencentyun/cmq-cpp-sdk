@@ -40,8 +40,9 @@ int main()
         // your endpoint and protocal
         string endpoint = "";
         string protocol = "";
+        vector<string> vbindKing;
         vector<string> vflterTag;
-        account.createSubscribe(topicName,subscriptionName,endpoint,protocol,vflterTag);
+        account.createSubscribe(topicName,subscriptionName,endpoint,protocol,vbindKing,vflterTag);
         cout<<"create subscription"<<endl;
 
         string msg = "this is a test message";
