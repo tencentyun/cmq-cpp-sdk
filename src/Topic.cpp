@@ -124,7 +124,7 @@ void Topic::BatchPublishMessage(const vector<string> &vtMsgBody, vector<string> 
 		return;
 	map<string,string> param;
 	param["topicName"] = this->topicName;
-	param["routingkey"] = routingKey;
+	param["routingKey"] = routingKey;
 	for(size_t i=0;i<vtMsgBody.size();i++)
 	{
 		string k = "msgBody." + cmq::int2str(i+1);
