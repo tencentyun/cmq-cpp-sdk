@@ -2,8 +2,11 @@
 #include "cmq_exception.h"
 #include "json/json.h"
 #include "cmq_tool.h"
+#include <iostream>
+#include <thread>
 
 using namespace cmq;
+using namespace std;
 
 QueueMeta::QueueMeta()
 :maxMsgHeapNum(-1)
@@ -246,8 +249,13 @@ void Queue::deleteMessage(const string &receiptHandle)
 		throw CMQClientException("Json parse failed");
 	
 	int code = value["code"].asInt();
-	if(code != 0)
-		throw CMQServerException(code,value["message"].asString(),value["requestId"].asString());
+    if(code != 0) {
+        throw CMQServerException(code,value["message"].asString(),value["requestId"].asString());
+    } else {
+        cout << "delete message success receiptHandle:" << receiptHandle
+        << " requestId:" << value["requestId"].asString()
+        << " ThreadId:" << this_thread::get_id() << endl;
+    }
 }
 		
 void Queue::batchDeleteMessage(const vector<string> &vtReceiptHandle)
